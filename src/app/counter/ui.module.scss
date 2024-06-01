@@ -1,0 +1,21 @@
+@import '@styles/customs';
+
+.back-ground {
+  @include center-block;
+
+  width: 400px;
+
+  padding: 10px;
+
+  text-align: center;
+
+  color: $white;
+
+  background-color: $dark;
+
+  border-radius: 5px;
+}
+
+.button {
+  @apply bg-yellow-500;
+}
