@@ -23,7 +23,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@styles/globals": ["./src/shared/styles/globals.scss"],
-      "@styles/customs": ["./src/shared/styles/custom.scss"]
+      "@styles/customs": ["./src/shared/styles/customs.scss"]
     }
   },
   "include": [
