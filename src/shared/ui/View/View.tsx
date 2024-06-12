@@ -1,9 +1,7 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
-interface ConditionProps {
+interface ConditionProps extends PropsWithChildren {
   if: boolean;
-
-  children: ReactNode;
 }
 
 const Condition: FC<ConditionProps> = ({ if: condition, children }) => {

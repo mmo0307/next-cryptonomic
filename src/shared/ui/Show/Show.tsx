@@ -1,17 +1,19 @@
-import { Children, isValidElement, ReactElement, ReactNode } from 'react';
+import {
+  Children,
+  isValidElement,
+  PropsWithChildren,
+  ReactElement,
+  ReactNode
+} from 'react';
 
-interface ShowProps {
-  children: ReactNode;
-}
+type ShowProps = PropsWithChildren;
 
-interface WhenProps {
+interface WhenProps extends PropsWithChildren {
   isTrue: boolean;
-  children: ReactNode;
 }
 
-interface ElseProps {
+interface ElseProps extends PropsWithChildren {
   render?: ReactNode;
-  children?: ReactNode;
 }
 
 const Show = (props: ShowProps): ReactElement | null => {

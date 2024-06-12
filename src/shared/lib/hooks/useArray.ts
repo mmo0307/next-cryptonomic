@@ -1,5 +1,9 @@
 import { useState } from 'react';
 
+/**
+ * hook for create an array with some useful functions
+ * @param defaultValue
+ */
 export default function useArray<T>(defaultValue: T[]) {
   const [array, setArray] = useState<T[]>(defaultValue);
 

@@ -1,9 +1,9 @@
-//@import '@styles';
+@import '@styles/customs';
 
 .page-error {
-  //@include flex(center, center, column);
+  @include flex(center, center, column);
 
-  //@include size(100%, 100vh);
+  @include size(100%, 100vh);
 
   gap: 25px;
 
@@ -33,9 +33,9 @@
 
   text-decoration-thickness: auto;
 
-  //color: var(--white);
-  //
-  //background-color: var(--dark);
+  color: $white;
+
+  background-color: $dark;
 
   border: 1px solid transparent;
 
@@ -56,7 +56,7 @@
   touch-action: manipulation;
 
   &:hover {
-    //background-color: var(--gray);
+    background-color: $gray;
   }
 
   &:focus {

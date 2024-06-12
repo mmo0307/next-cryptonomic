@@ -9,6 +9,7 @@ const Home: NextPage = () => {
   const { t } = useTranslation();
   const [count, setCount] = useState(0);
   const router = useRouter();
+
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
       {t('Home')}

@@ -1,13 +1,19 @@
-import '@styles/globals';
 import '@styles/customs';
+import '@styles/globals';
 
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Pixelify_Sans, Rubik } from 'next/font/google';
+import clsx from 'clsx';
 
 import { Providers } from './config/providers/app-provider';
 
-const inter = Inter({ subsets: ['latin'] });
+const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' });
+
+const pixelifySans = Pixelify_Sans({
+  subsets: ['latin'],
+  variable: '--font-pixelifySans'
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={clsx(rubik.variable, pixelifySans.variable)}>
         <Providers>{children}</Providers>
       </body>
     </html>

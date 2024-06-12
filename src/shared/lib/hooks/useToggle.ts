@@ -3,9 +3,9 @@ import { useState } from 'react';
 const useToggle = (initialValue: boolean) => {
   const [show, setShow] = useState<boolean>(initialValue);
 
-  const toggle = () => setShow(!show);
+  const onToggle = () => setShow(!show);
 
-  return [show, toggle];
+  return [show, onToggle];
 };
 
 export { useToggle };

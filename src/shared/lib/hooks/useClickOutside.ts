@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 /**
  * Hook that alerts clicks outside the passed ref
+ * @param ref
+ * @param onClickOutside
  */
 const useClickOutside = (ref: any, onClickOutside: () => void) => {
   /**
