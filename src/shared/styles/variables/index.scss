@@ -1,11 +1,3 @@
-//Media queries
-$mobile: 425px;
-$tablet: 768px;
-$large: 1024px;
-$desktop: 1440px;
-
-//Colors
-$white: #fff;
-$dark: #000;
-$gray: #808080FFF;
-$error: #f00;
+@import 'media';
+@import "colors";
+@import "spaces";

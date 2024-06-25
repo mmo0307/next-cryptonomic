@@ -3,8 +3,6 @@
 // DEVTOOLS BUILDER enabled wrap nextConfig
 // const nextConfig = BuilderDevTools()({...})
 
-import path from 'path';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -41,6 +39,7 @@ const nextConfig = {
       });
     });
 
+    //alias
     config.resolve.alias = {
       ...config.resolve.alias,
       '@/*': './src/*',
@@ -48,8 +47,12 @@ const nextConfig = {
       '@styles/customs': './src/shared/styles/customs.scss'
     }
 
-    // config.resolve.alias['@'] = path.join(__dirname, 'src');
-    // config.resolve.alias['@styles'] = path.join(__dirname, 'src/shared/styles/globals.scss');
+    //svg
+    // config.module.rules.push({
+    //   test: /\.svg$/i,
+    //   issuer: /\.[jt]sx?$/,
+    //   use: ['@svgr/webpack'],
+    // })
 
     return config;
   },

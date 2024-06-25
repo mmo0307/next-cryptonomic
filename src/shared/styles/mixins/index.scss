@@ -98,12 +98,6 @@
   @include flex(center, center);
 }
 
-%mx-auto {
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .ft-rubik,
 %ft-rubik {
   font-family: var(--font-rubik), sans-serif;
