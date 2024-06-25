@@ -1,0 +1,99 @@
+@import '@styles/customs';
+
+.left {
+  text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.rubik {
+    @extend %ft-rubik;
+}
+
+.pixelify {
+    @extend %ft-pixelify;
+}
+
+.primary {
+  color: $dark;
+}
+
+.error {
+  color: $error;
+}
+
+.h1 {
+  font-size: 52px;
+
+  line-height: 62px;
+}
+
+.h2 {
+  font-size: 32px;
+
+  line-height: 42px;
+}
+
+.h3 {
+  font-size: 28px;
+
+  font-weight: 500;
+
+  line-height: 40px;
+}
+
+.h4 {
+  font-size: 24px;
+
+  line-height: 32px;
+}
+
+.h5 {
+  font-size: 18px;
+
+  font-weight: 500;
+
+  line-height: 24px;
+}
+
+.h6 {
+  font-size: 14px;
+
+  line-height: 16px;
+}
+
+.body-1 {
+  font-size: 16px;
+
+  line-height: 22px;
+}
+
+.body-2 {
+  font-size: 14px;
+
+  line-height: 20px;
+}
+
+.caption {
+  font-size: 12px;
+
+  line-height: 16px;
+
+  letter-spacing: 0.4px;
+}
+
+.overline {
+  font-size: 10px;
+
+  line-height: 14px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}

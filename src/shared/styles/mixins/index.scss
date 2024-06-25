@@ -93,3 +93,23 @@
   &:-ms-input-placeholder { @content; }
   &::-webkit-input-placeholder { @content; }
 }
+
+%flex-center {
+  @include flex(center, center);
+}
+
+%mx-auto {
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ft-rubik,
+%ft-rubik {
+  font-family: var(--font-rubik), sans-serif;
+}
+
+.ft-pixelify,
+%ft-pixelify {
+  font-family: var(--font-pixelifySans), sans-serif;
+}

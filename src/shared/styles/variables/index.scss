@@ -1,32 +1,11 @@
 //Media queries
+$mobile: 425px;
 $tablet: 768px;
 $large: 1024px;
-$desktop: 1280px;
+$desktop: 1440px;
 
 //Colors
-$white: #ffffff;
-$dark: #000000;
-$gray: #808080FF;
-
-//Fonts
-$font-family-main: var(--font-rubik);
-
-// size s
-$font-size-s: 12px;
-$font-line-s: 20px;
-$font-s: var($font-size-s) / var($font-line-s) var($font-family-main);
-
-// size m
-$font-size-m: 16px;
-$font-line-m: 24px;
-$font-m: var($font-size-m) / var($font-line-m) var($font-family-main);
-
-// size l
-$font-size-l: 24px;
-$font-line-l: 32px;
-$font-l: var($font-size-l) / var($font-line-l) var($font-family-main);
-
-// size xl
-$font-size-xl: 32px;
-$font-line-xl: 40px;
-$font-xl: var($font-size-xl) / var($font-line-xl) var($font-family-main);
+$white: #fff;
+$dark: #000;
+$gray: #808080FFF;
+$error: #f00;

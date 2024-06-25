@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/shared/lib/classNames/classNames';
 
-import styles from './PageError.module.scss';
+import styles from './ui.module.scss';
 
 interface PageErrorProps {
   className?: string;

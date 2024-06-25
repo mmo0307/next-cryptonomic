@@ -25,7 +25,7 @@ const Show = (props: ShowProps): ReactElement | null => {
 
     if (child.props.isTrue === undefined) {
       otherwise = child;
-    } else if (!when && child.props.isTrue === true) {
+    } else if (!when && child.props.isTrue) {
       when = child;
     }
   });
