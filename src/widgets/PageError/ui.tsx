@@ -18,7 +18,7 @@ const PageError: FC<PageErrorProps> = ({ className }) => {
   };
 
   return (
-    <div className={cn(styles.pageError, {}, [className])}>
+    <div className={cn(styles.pageError, className)}>
       <p>{t('Произошла непредвиденная ошибка')}</p>
 
       <button

@@ -1,2 +1,6 @@
-@import 'normalize.scss';
-@import 'reset.scss';
+@import 'normalize';
+@import 'reset';
+
+* {
+  font-family: var(--font-rubik), sans-serif;
+}

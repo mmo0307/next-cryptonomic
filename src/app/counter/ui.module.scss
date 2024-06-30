@@ -1,4 +1,4 @@
-@import '@styles/customs';
+@import '@styles/custom';
 
 .back-ground {
   @include center-block;
@@ -9,13 +9,13 @@
 
   text-align: center;
 
-  color: $white;
+  color: $background-paper;
 
-  background-color: $dark;
+  background-color: $backdrop-main;
 
   border-radius: 5px;
 }
 
 .button {
-  @apply bg-yellow-500;
+  @extend %ft-pixelify;
 }

@@ -44,15 +44,15 @@ const nextConfig = {
       ...config.resolve.alias,
       '@/*': './src/*',
       '@styles/globals': './src/shared/styles/globals.scss',
-      '@styles/customs': './src/shared/styles/customs.scss'
+      '@styles/custom': './src/shared/styles/custom.scss'
     }
 
     //svg
-    // config.module.rules.push({
-    //   test: /\.svg$/i,
-    //   issuer: /\.[jt]sx?$/,
-    //   use: ['@svgr/webpack'],
-    // })
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    })
 
     return config;
   },

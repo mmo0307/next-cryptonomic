@@ -1,0 +1,181 @@
+@import '@styles/custom';
+
+.wrapper {
+
+  position: relative;
+
+  width: 100%;
+  cursor: pointer;
+}
+
+.block {
+  @include flex(normal, center);
+
+  border: 1px solid $border-light;
+
+  border-radius: 8px;
+
+  &-has-error {
+    border-color: $error-main !important;
+  }
+
+  &-focus {
+    border-color: $static-main;
+  }
+}
+
+.icon {
+  @include size(24px);
+
+  path {
+    stroke: $primary-main;
+  }
+}
+
+.label {
+  position: absolute;
+
+  top: 16px;
+
+  left: 13px;
+
+  transform-origin: 0 50%;
+
+  color: $text-secondary;
+
+  transition: transform 100ms ease-out;
+
+  pointer-events: none;
+
+  &-without-icon {
+    left: 42px;
+  }
+
+  &-focus {
+
+    transform: translateY(-10px);
+    font-size: 12px;
+
+    line-height: 12px;
+  }
+
+  &-has-error {
+    color: $error-main;
+  }
+}
+
+.error-text {
+
+  margin: 6px 0 0 6px;
+  font-size: 10px;
+
+  line-height: 10px;
+
+  color: $error-main;
+}
+
+.helper-text {
+
+  margin: 6px 0 0 6px;
+
+  font-size: 10px;
+
+  line-height: 10px;
+  color: $text-secondary;
+}
+
+.input {
+  @include text-truncate;
+
+  width: 100%;
+
+  height: 24px;
+
+  padding: 0;
+
+  color: $text-primary;
+
+  border: none;
+
+  @include input-placeholder {
+    color: $gray-25;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &-icon {
+    margin-left: 5px;
+  }
+}
+
+// Variants
+.disabled {
+
+  opacity: 50%;
+  cursor: not-allowed;
+
+  .input {
+
+    background: border-box;
+    cursor: not-allowed;
+  }
+}
+
+.success {
+  .block {
+    border-color: $secondary-main;
+  }
+}
+
+// Size
+.sm {
+  .block {
+
+    height: 40px;
+
+    max-height: 40px;
+    padding: 8px 12px;
+  }
+
+  .label {
+    top: 8px;
+
+    &-focus {
+
+      transform: translateY(-5px);
+      font-size: 10px;
+
+      line-height: 10px;
+    }
+  }
+}
+
+.md {
+  .block {
+
+    height: 48px;
+
+    max-height: 48px;
+    padding: 8px 12px;
+  }
+
+  .label {
+    top: 12px;
+
+    &-focus {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+.lg {
+  .block {
+
+    height: 56px;
+
+    max-height: 56px;
+    padding: 16px 12px;
+  }
+}

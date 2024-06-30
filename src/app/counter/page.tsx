@@ -14,7 +14,7 @@ const Counter = hoc.observer(useCounter, ({ t, counter, count, getData }) => (
       {t('Counter:')} {counter}
     </p>
 
-    <div className='grid gap-4 grid-cols-2'>
+    <div>
       <button
         className={styles.button}
         onClick={count}

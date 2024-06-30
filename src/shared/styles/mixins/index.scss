@@ -4,6 +4,12 @@
   height: $height;
 }
 
+@mixin max-size($width, $height: $width) {
+  max-width: $width;
+
+  max-height: $height;
+}
+
 @mixin flex(
   $justifyContent: flex-start,
   $alignItems: center,
@@ -88,6 +94,7 @@
 
 @mixin input-placeholder {
   &.placeholder { @content; }
+  &::placeholder{ @content; }
   &:-moz-placeholder { @content; }
   &::-moz-placeholder { @content; }
   &:-ms-input-placeholder { @content; }

@@ -1,5 +1,11 @@
-//Media queries
-$mobile: 425px;
+//Mobile
+$mobile-s: 320px;
+$mobile-m: 375px;
+$mobile-l: 430px;
+
+//Tablet
 $tablet: 768px;
-$large: 1024px;
-$desktop: 1440px;
+
+//Desktop
+$laptop: 1024px;
+$laptop-l: 1440px;

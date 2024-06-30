@@ -1,4 +1,4 @@
-@import '@styles/customs';
+@import '@styles/custom';
 
 .left {
   text-align: left;
@@ -21,11 +21,11 @@
 }
 
 .primary {
-  color: $dark;
+  color: $text-primary;
 }
 
 .error {
-  color: $error;
+  color: $error-dark;
 }
 
 .h1 {

@@ -1,10 +1,10 @@
-import '@styles/customs';
 import '@styles/globals';
 
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Pixelify_Sans, Rubik } from 'next/font/google';
-import clsx from 'clsx';
+
+import { cn } from '@/shared/lib/classNames/classNames';
 
 import { Providers } from './config/providers/app-provider';
 
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={clsx(rubik.variable, pixelifySans.variable)}>
+      <body className={cn(rubik.variable, pixelifySans.variable)}>
         <Providers>{children}</Providers>
       </body>
     </html>

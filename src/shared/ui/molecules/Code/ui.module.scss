@@ -1,0 +1,50 @@
+@import '@styles/custom';
+
+.wrapper-code {
+  display: flex;
+
+  gap: $space-2;
+}
+
+.code {
+  @include size(48px);
+
+  display: block;
+
+  border: 1px solid $gray-25;
+
+  border-radius: 8px;
+}
+
+.error {
+  border: 2px solid $error-main;
+}
+
+.focused {
+  border: 2px solid $info-dark;
+}
+
+// Input component
+.block {
+
+  position: absolute;
+
+  z-index: -1;
+
+  width: 0;
+
+  height: 1px !important;
+
+  max-height: 1px !important;
+
+  padding: 0;
+
+  caret-color: transparent;
+  background-color: transparent;
+
+  border: none;
+
+  outline: none;
+
+  pointer-events: none;
+}

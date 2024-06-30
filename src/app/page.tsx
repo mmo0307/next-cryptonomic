@@ -5,27 +5,30 @@ import { useTranslation } from 'react-i18next';
 import { NextPage } from 'next';
 import { useRouter } from 'next/navigation';
 
-import { Input } from '@/shared/ui/Input';
+import { Code } from '@/shared/ui/molecules/Code';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
   const [count, setCount] = useState(0);
   const router = useRouter();
 
-  const [value, setValue] = useState<string | number>('');
+  const [value, setValue] = useState<string>('');
+
+  const onValueChange = (values: string) => {
+    console.log('values=>', values);
+    setValue(values);
+  };
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+    <main>
       {t('Home')}
 
-      <Input
-        value={value}
-        onChange={setValue}
-        // append={<EmailIcon />}
-        // prepend={<EmailIcon />}
-        label='Email address'
-        placeholder='Email address'
-      />
+      <div style={{ width: '343px', display: 'grid', gap: '30px' }}>
+        <Code
+          value={value}
+          onChange={onValueChange}
+        />
+      </div>
 
       <p>{count}</p>
       <button onClick={() => setCount(count + 1)}>{t('Click me')}</button>

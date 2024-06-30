@@ -2,7 +2,7 @@ import React, { memo, SVGProps, VFC } from 'react';
 
 import { cn } from '@/shared/lib/classNames/classNames';
 
-import styles from './Icon.module.scss';
+import styles from './ui.module.scss';
 
 interface IconBaseProps extends SVGProps<SVGSVGElement> {
   className?: string;
