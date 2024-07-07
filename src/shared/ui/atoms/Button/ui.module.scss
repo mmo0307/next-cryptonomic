@@ -1,0 +1,174 @@
+@import '@styles/custom';
+
+.button {
+  @extend %flex-center;
+
+  gap: 8px;
+
+  padding: 0 15px;
+
+  color: $background-paper;
+
+  border-radius: 6px;
+
+  &:hover {
+
+    transition: all 0.2s;
+    cursor: pointer;
+
+    .addon-left svg,
+    .addon-right svg {
+      color: $background-paper;
+    }
+  }
+
+  & > .addon-left, .addon-right {
+    @extend %flex-center;
+
+    height: 24px;
+  }
+}
+
+.disabled {
+  color: rgba(0, 0, 0, 0.25) !important;
+
+  background-color: $gray-50 !important;
+
+  border-color: $gray-50 !important;
+
+  svg {
+    path, circle {
+      stroke: $primary-main !important;
+    }
+  }
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.rounded {
+  border-radius: 100px;
+}
+
+// SIZE
+.small {
+  @include size(fit-content, 32px);
+}
+
+.medium {
+  @include size(fit-content, 40px);
+}
+
+.large {
+  @include size(fit-content, 48px);
+}
+
+// VARIANT
+.primary {
+  background-color: $blue-25;
+
+  border: 1px solid $blue-25;
+
+  &:hover, &:focus  {
+    background-color: $blue-50;
+
+    border-color: $blue-50;
+  }
+
+  &:active {
+    background-color: $blue-75;
+
+    border-color: $blue-75;
+  }
+
+  svg {
+    path, circle {
+      stroke: $background-paper;
+    }
+  }
+}
+
+.default {
+  color: $text-primary;
+
+  background-color: $background-paper;
+
+  border: 1px solid $gray-50;
+
+  &:hover, &:focus  {
+    color: $blue-50;
+
+    border-color: $blue-50;
+  }
+
+  &:active {
+    color: $blue-75;
+
+    border-color: $blue-75;
+  }
+}
+
+.dashed {
+  color: $text-primary;
+
+  background-color: $background-paper;
+
+  border-color: $gray-50;
+
+  border-style: dashed solid;
+
+  &:hover, &:focus  {
+    color: $blue-50;
+
+    border-color: $blue-50;
+  }
+
+  &:active  {
+    color: $blue-75;
+
+    border-color: $blue-75;
+  }
+}
+
+.link {
+  color: $blue-25;
+
+  background-color: transparent;
+
+  border: none;
+
+  &-line {
+    text-decoration: underline;
+
+    text-underline-offset: 2px;
+  }
+
+  & + .disabled {
+    color: rgba(0, 0, 0, 0.25);
+
+    background-color: transparent !important;
+
+    border: none !important;
+  }
+
+  &:hover, &:focus {
+    text-decoration: underline;
+
+    text-underline-offset: 2px;
+  }
+
+  &:active  {
+    text-decoration: underline;
+
+    text-underline-offset: 2px;
+
+    color: $blue-75;
+  }
+}
+
+.icon-only {
+  height: auto;
+
+  padding: 5px;
+}

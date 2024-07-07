@@ -1,10 +1,10 @@
 @import '@styles/custom';
 
 .wrapper {
-
   position: relative;
 
   width: 100%;
+
   cursor: pointer;
 }
 
@@ -52,8 +52,8 @@
   }
 
   &-focus {
-
     transform: translateY(-10px);
+
     font-size: 12px;
 
     line-height: 12px;
@@ -65,8 +65,8 @@
 }
 
 .error-text {
-
   margin: 6px 0 0 6px;
+
   font-size: 10px;
 
   line-height: 10px;
@@ -75,12 +75,12 @@
 }
 
 .helper-text {
-
   margin: 6px 0 0 6px;
 
   font-size: 10px;
 
   line-height: 10px;
+
   color: $text-secondary;
 }
 
@@ -112,13 +112,13 @@
 
 // Variants
 .disabled {
-
   opacity: 50%;
+
   cursor: not-allowed;
 
   .input {
-
     background: border-box;
+
     cursor: not-allowed;
   }
 }
@@ -132,10 +132,10 @@
 // Size
 .sm {
   .block {
-
     height: 40px;
 
     max-height: 40px;
+
     padding: 8px 12px;
   }
 
@@ -143,8 +143,8 @@
     top: 8px;
 
     &-focus {
-
       transform: translateY(-5px);
+
       font-size: 10px;
 
       line-height: 10px;
@@ -154,10 +154,10 @@
 
 .md {
   .block {
-
     height: 48px;
 
     max-height: 48px;
+
     padding: 8px 12px;
   }
 
@@ -172,10 +172,10 @@
 
 .lg {
   .block {
-
     height: 56px;
 
     max-height: 56px;
+
     padding: 16px 12px;
   }
 }
