@@ -1,0 +1,30 @@
+@import '@styles/custom';
+
+.wrapper {
+  @include flex(center, center);
+}
+
+.loader {
+  @include size(48px);
+
+  display: inline-block;
+
+  box-sizing: border-box;
+
+  border: 5px solid;
+
+  border-color: $primary-main transparent;
+
+  border-radius: 50%;
+
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

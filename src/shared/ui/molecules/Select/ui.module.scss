@@ -1,0 +1,74 @@
+@import '@styles/custom';
+
+.select {
+  min-width: 220px;
+}
+
+.icon {
+  transition: all 0.2s;
+}
+
+.focused-icon {
+  transform: rotate(180deg);
+}
+
+.drop-down {
+
+  position: relative;
+
+  top: -10px;
+
+  min-height: 62px;
+
+  max-height: 130px;
+
+  padding: 2px;
+
+  overflow: auto;
+
+  background: $background-paper;
+
+  border: 1px solid $static-main;
+
+  border-radius: 4px;
+}
+
+.drop-down-item {
+  @include flex($alignItems: center);
+
+  height: 36px;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+  &:hover {
+
+    background-color: $border-background;
+    cursor: pointer;
+  }
+}
+
+.pending {
+  @include flex(center, center);
+}
+
+.sm {
+  min-height: 40px;
+
+  .loader{
+    @include first() {
+      @include size(24px);
+    }
+  }
+}
+
+.md, .lg {
+  min-height: 48px;
+
+  .loader {
+    @include first() {
+      @include size(32px);
+    }
+  }
+}
