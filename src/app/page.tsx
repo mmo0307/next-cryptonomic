@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { NextPage } from 'next';
 import { useRouter } from 'next/navigation';
 
+import { Avatar } from '@/shared/ui/atoms/Avatar';
 import { Select } from '@/shared/ui/molecules/Select';
 import { Page } from '@/widgets/Page';
 
@@ -53,6 +54,8 @@ const Home: NextPage = () => {
         onChange={setValue}
         options={options}
       />
+
+      <Avatar />
     </Page>
   );
 };
