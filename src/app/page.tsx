@@ -4,18 +4,17 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NextPage } from 'next';
 import { useRouter } from 'next/navigation';
+import { useFormik } from 'formik';
+import { Form } from 'formik-toolkit';
 
-import { Select } from '@/shared/ui/molecules/Select';
+import { Button } from '@/shared/ui/atoms/Button';
+import { Field } from '@/shared/utils/forms/field';
 import { Page } from '@/widgets/Page';
-
-import styles from './ui.module.scss';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
   const [count, setCount] = useState(0);
   const router = useRouter();
-
-  const [value, setValue] = useState<string>('');
 
   const options = [
     'one',
@@ -29,6 +28,18 @@ const Home: NextPage = () => {
     'four',
     'five'
   ];
+
+  const initialValues = {
+    city: null,
+    firstName: null
+  };
+
+  const form = useFormik({
+    initialValues,
+    onSubmit: (values) => {
+      console.log(values);
+    }
+  });
 
   return (
     <Page>
@@ -46,13 +57,17 @@ const Home: NextPage = () => {
         {t('router counter')}
       </button>
 
-      <Select
-        className={styles.select}
-        label='Label'
-        value={value}
-        onChange={setValue}
-        options={options}
-      />
+      <Form use={form}>
+        <Field.Select
+          label='Label'
+          name='city'
+          options={options}
+        />
+
+        <Field.Input name='firstName' />
+
+        <Button type='submit'>{'Submit'}</Button>
+      </Form>
     </Page>
   );
 };

@@ -1,6 +1,6 @@
 {
   "name": "cryptonomica-next",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -21,13 +21,15 @@
     "@builder.io/sdk": "^2.2.3",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.11",
+    "formik": "^2.4.6",
+    "formik-toolkit": "^1.0.36",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.5.2",
     "mobx": "^6.12.3",
     "mobx-react": "^9.1.1",
     "mobx-react-lite": "^4.0.7",
-    "next": "14.2.3",
+    "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^14.1.2"
