@@ -1,0 +1,95 @@
+@import '@styles/custom';
+
+.item {
+  @include flex();
+
+  gap: 8px;
+
+  width: fit-content;
+
+  padding: 10px;
+
+  cursor: pointer;
+
+  &.checked {
+    background: $border-background;
+
+    border-radius: 16px;
+  }
+}
+
+.checked {
+  .radio {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+.radio {
+  @include size(20px);
+
+  position: relative;
+
+  flex-shrink: 0;
+
+  background: transparent;
+
+  border: 1px solid $primary-main;
+
+  border-radius: 50%;
+
+  transition: 0.25s;
+
+  &:before {
+    @include size(10px);
+
+    content: '';
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: $primary-main;
+
+    border-radius: 50%;
+
+    opacity: 0;
+  }
+}
+
+.label {
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  .label {
+    cursor: not-allowed;
+  }
+}
+
+.has-error {
+  .radio {
+    border-color: $error-main;
+  }
+
+  .checked {
+    background: $error-main;
+  }
+
+  .label {
+    color: $error-main;
+  }
+}
+
+.without-back-ground {
+  background: none;
+}
