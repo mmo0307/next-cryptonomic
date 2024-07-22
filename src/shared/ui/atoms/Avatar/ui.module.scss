@@ -1,0 +1,25 @@
+@import '@styles/custom';
+
+.avatar {
+  @include size(90px);
+
+  max-width: 90px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+}
+
+.random-avatar {
+  @include size(100%);
+
+  display: grid;
+
+  grid-template-columns: repeat(90, 1fr);
+}
+
+.color-item {
+  @include size(1px);
+
+  display: block;
+}
