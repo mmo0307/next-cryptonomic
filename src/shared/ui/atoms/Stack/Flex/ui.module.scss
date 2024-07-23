@@ -52,23 +52,23 @@
   flex-direction: column;
 }
 
-.gap4 {
+.gap-4 {
   gap: $space-1;
 }
 
-.gap8 {
+.gap-8 {
   gap: $space-2;
 }
 
-.gap16 {
+.gap-16 {
   gap: $space-4;
 }
 
-.gap24 {
+.gap-24 {
   gap: $space-6;
 }
 
-.gap32 {
+.gap-32 {
   gap: $space-8;
 }
 
@@ -77,9 +77,9 @@
 }
 
 .wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .nowrap {
-    flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }

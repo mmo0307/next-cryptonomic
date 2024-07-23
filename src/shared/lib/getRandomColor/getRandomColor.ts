@@ -9,9 +9,9 @@ function getRandomColor(): string {
   return color;
 }
 
-function generateRandomColorAvatar(size: number) {
+function generateRandomColorAvatar(size: number): string[][] {
   const randomColors: string[] = [];
-  const avatarColors = [];
+  const avatarColors: string[][] = [];
 
   for (let i = 0; i < 3; i++) {
     randomColors.push(getRandomColor());
@@ -21,7 +21,8 @@ function generateRandomColorAvatar(size: number) {
     avatarColors.push([]);
 
     for (let j = 0; j < size; j++) {
-      avatarColors[i].push(randomColors[Math.floor(Math.random() * 3)]);
+      const res = randomColors[Math.floor(Math.random() * 3)];
+      avatarColors[i].push(res);
     }
   }
 

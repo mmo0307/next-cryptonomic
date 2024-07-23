@@ -51,24 +51,29 @@ const Flex: FC<FlexProps> = ({
   gap,
   max,
   ...props
-}) => (
-  <div
-    className={cn(
-      styles.flex,
-      className,
-      justifyClasses[justify],
-      alignClasses[align],
-      directionClasses[direction],
-      styles[wrap],
-      gap && gapClasses[gap],
-      {
-        [styles.max]: max
-      }
-    )}
-    {...props}
-  >
-    {children}
-  </div>
-);
+}) => {
+  console.log('direction=>', direction);
+  console.log('directionClasses=>', directionClasses[direction]);
+
+  return (
+    <div
+      className={cn(
+        styles.flex,
+        className,
+        justifyClasses[justify],
+        alignClasses[align],
+        directionClasses[direction],
+        styles[wrap],
+        gap && gapClasses[gap],
+        {
+          [styles.max]: max
+        }
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
 
 export { Flex };
