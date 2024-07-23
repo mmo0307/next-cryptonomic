@@ -29,6 +29,8 @@ export default function RootLayout({
     <html lang='en'>
       <body className={cn(rubik.variable, pixelifySans.variable)}>
         <Providers>{children}</Providers>
+
+        <div id='modals'></div>
       </body>
     </html>
   );
