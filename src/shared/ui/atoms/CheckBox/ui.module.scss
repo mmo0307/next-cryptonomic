@@ -1,0 +1,158 @@
+@import '@styles/custom';
+
+$checkbox-height: 24px;
+$duration: .4s;
+
+.block {
+  @include flex();
+
+  gap: 8px;
+}
+
+.wrapper {
+  @include flex();
+}
+
+.checkbox[type=checkbox]{
+  display:none;
+}
+
+.checkmark {
+  @include size($checkbox-height);
+
+  position: relative;
+
+  background-color: transparent;
+
+  border: 1px solid $static-main;
+
+  border-radius: 5px;
+
+  -moz-transition: all 0.1s ease-out;
+
+  -o-transition: all 0.1s ease-out;
+
+  -webkit-transition: all 0.1s ease-out;
+
+  transition: all 0.1s ease-out;
+
+  cursor: pointer;
+
+  &::before, &::after {
+    content: ' ';
+
+    position: absolute;
+
+    -moz-transform-origin: left top;
+
+    -ms-transform-origin: left top;
+
+    -o-transform-origin: left top;
+
+    -webkit-transform-origin: left top;
+
+    transform-origin: left top;
+
+    width: 2px;
+
+    background-color: $background-light;
+
+    border-radius: 5px;
+  }
+
+  &::before {
+    top: 17px;
+
+    left: 10px;
+
+    -moz-transform: rotate(-135deg);
+
+    -ms-transform: rotate(-135deg);
+
+    -o-transform: rotate(-135deg);
+
+    -webkit-transform: rotate(-135deg);
+
+    transform: rotate(-135deg);
+  }
+
+  &::after {
+    top: 11px;
+
+    left: 4px;
+
+    -moz-transform: rotate(-45deg);
+
+    -ms-transform: rotate(-45deg);
+
+    -o-transform: rotate(-45deg);
+
+    -webkit-transform: rotate(-45deg);
+
+    transform: rotate(-45deg);
+  }
+}
+
+.checkbox:checked + .checkmark {
+  background-color: $static-main;
+
+  border-color: $static-main;
+
+  &::after{
+    height: $checkbox-height * .5;
+
+    -moz-animation: dothabottomcheck $duration/2 ease 0s forwards;
+
+    -o-animation: dothabottomcheck $duration/2 ease 0s forwards;
+
+    -webkit-animation: dothabottomcheck $duration/2 ease 0s forwards;
+
+    animation: dothabottomcheck $duration/2 ease 0s forwards;
+  }
+
+  &::before{
+    height: 2px;
+
+    -moz-animation: dothatopcheck $duration ease 0s forwards;
+
+    -o-animation: dothatopcheck $duration ease 0s forwards;
+
+    -webkit-animation: dothatopcheck $duration ease 0s forwards;
+
+    animation: dothatopcheck $duration ease 0s forwards;
+  }
+}
+
+.error {
+  .checkmark {
+    border-color: $red-25;
+  }
+
+  .label {
+    color: $red-25;
+  }
+}
+
+.disabled {
+  width: fit-content;
+
+  opacity: 50%;
+
+  pointer-events: none;
+
+  .checkbox {
+    pointer-events: none;
+  }
+
+  .checkmark {
+    border-color: $primary-light !important;
+
+    &-disabled {
+      background-color: $primary-light !important;
+    }
+  }
+
+  .label {
+    color: $primary-light;
+  }
+}

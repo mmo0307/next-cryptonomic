@@ -10,6 +10,16 @@
   max-height: $height;
 }
 
+@mixin fixed-layout($columns, $width, $h-gap, $v-gap) {
+  display: grid;
+
+  column-gap: $h-gap;
+
+  grid-template-columns: repeat($columns, $width);
+
+  row-gap: $v-gap;
+}
+
 @mixin flex(
   $justifyContent: flex-start,
   $alignItems: center,
@@ -99,6 +109,26 @@
   &::-moz-placeholder { @content; }
   &:-ms-input-placeholder { @content; }
   &::-webkit-input-placeholder { @content; }
+}
+
+@mixin absolute-center() {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+@mixin fixed-center() {
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 }
 
 %flex-center {

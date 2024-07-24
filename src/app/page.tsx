@@ -5,12 +5,18 @@ import { useTranslation } from 'react-i18next';
 import { NextPage } from 'next';
 import { useRouter } from 'next/navigation';
 
+import { CheckBox } from '@/shared/ui/atoms/CheckBox';
 import { Page } from '@/widgets/Page';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
   const [count, setCount] = useState(0);
+  const [value, setValue] = useState(false);
   const router = useRouter();
+
+  const onChange = (checked: boolean) => {
+    setValue(checked);
+  };
 
   return (
     <Page>
@@ -27,6 +33,26 @@ const Home: NextPage = () => {
       >
         {t('router counter')}
       </button>
+
+      <CheckBox
+        value={value}
+        onChange={onChange}
+        label='Param 1'
+      />
+
+      <CheckBox
+        error
+        value={value}
+        onChange={onChange}
+        label='Param 1'
+      />
+
+      <CheckBox
+        disabled
+        value={value}
+        onChange={onChange}
+        label='Param 1'
+      />
     </Page>
   );
 };

@@ -84,7 +84,7 @@ export const Column: Story = {
       </>
     ),
 
-    align: "normal"
+    align: 'normal'
   }
 };
 

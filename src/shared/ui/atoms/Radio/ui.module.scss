@@ -44,15 +44,9 @@
   &:before {
     @include size(10px);
 
+    @include absolute-center();
+
     content: '';
-
-    position: absolute;
-
-    top: 50%;
-
-    left: 50%;
-
-    transform: translate(-50%, -50%);
 
     background: $primary-main;
 
