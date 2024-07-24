@@ -1,0 +1,61 @@
+@import '@styles/custom';
+
+.pagination {
+  @include flex();
+
+  gap: $space-2;
+
+  width: fit-content;
+}
+
+.button {
+  @include size(32px);
+
+  @include flex(center, center);
+
+  cursor: pointer;
+
+  &-disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+  }
+
+  &:hover {
+
+    background-color: $green-25;
+    border-radius: 6px;
+  }
+}
+
+.arrow-right {
+  transform: rotate(180deg);
+}
+
+.container {
+  @include flex();
+
+  gap: $space-2;
+}
+
+.page-item {
+  @include size(32px);
+
+  @include flex(center, center);
+
+  cursor: pointer;
+
+  &:hover {
+
+    background: $gray-50;
+    border-radius: 6px;
+  }
+
+  &-active {
+
+    background-color: $green-25 !important;
+    border: 1px solid $static-main;
+
+    border-radius: 6px;
+  }
+}

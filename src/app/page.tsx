@@ -3,14 +3,13 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NextPage } from 'next';
-import { useRouter } from 'next/navigation';
 
+import { LinkButton } from '@/shared/ui/atoms/LinkButton';
 import { Page } from '@/widgets/Page';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
   const [count, setCount] = useState(0);
-  const router = useRouter();
 
   return (
     <Page>
@@ -21,12 +20,14 @@ const Home: NextPage = () => {
       <p>{count}</p>
       <button onClick={() => setCount(count + 1)}>{t('Click me')}</button>
 
-      <button
-        type='button'
-        onClick={() => router.push('/counter')}
+      <LinkButton to='/counter'>{t('router counter')}</LinkButton>
+
+      <LinkButton
+        to='/about'
+        variant='secondary'
       >
-        {t('router counter')}
-      </button>
+        {t('About Us')}
+      </LinkButton>
     </Page>
   );
 };
