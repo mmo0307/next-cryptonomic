@@ -1,0 +1,81 @@
+@import '@styles/custom';
+
+.overlay {
+  @include flex(center, center, column);
+
+  @include size(100dvw, 100dvh);
+
+  position: fixed;
+
+  z-index: $z-index-modal;
+
+  top: 0;
+
+  left: 0;
+
+  background-color: rgb(255 255 255 / 52%);
+
+  transition: 0.5s;
+
+  pointer-events: all;
+}
+
+.block {
+  @include size(142px, 40px);
+
+  @include absolute-center();
+
+  transform: none;
+
+  margin: -20px 0 0 -71px;
+
+  background: rgb(255 255 255 / 52%);
+
+  filter: contrast(20);
+}
+
+.dot {
+  @include size(16px);
+
+  position: absolute;
+
+  top: 12px;
+
+  left: 15px;
+
+  transform: translateX(0);
+
+  background: $static-main;
+
+  border-radius: 50%;
+
+  filter: blur(4px);
+
+  animation: dot 2.8s infinite;
+}
+
+.dots {
+  transform: translateX(0);
+
+  margin-left: 31px;
+
+  margin-top: 12px;
+
+  animation: dots 2.8s infinite;
+
+  span {
+    @include size(16px);
+
+    display: block;
+
+    float: left;
+
+    margin-left: 16px;
+
+    background: $static-main;
+
+    border-radius: 50%;
+
+    filter: blur(4px);
+  }
+}

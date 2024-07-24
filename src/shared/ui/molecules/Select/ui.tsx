@@ -106,7 +106,7 @@ const Select: FC<SelectProps> = ({
           })}
         >
           <View.Condition if={Boolean(pending)}>
-            <Loader className={cn(styles.loader)} />
+            <Loader.Circle className={cn(styles.loader)} />
           </View.Condition>
 
           <View.Condition if={!Boolean(pending)}>

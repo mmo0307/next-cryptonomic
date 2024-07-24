@@ -23,7 +23,7 @@
 }
 
 .active {
-  z-index: 10000;
+  z-index: $z-index-modal;
 
   pointer-events: all;
 

@@ -1,1 +1,9 @@
-export { Loader } from './ui';
+import { Circle } from './ui/Circle';
+import { Dots } from './ui/Dots';
+
+const Loader = {
+  Circle,
+  Dots
+};
+
+export { Loader };
