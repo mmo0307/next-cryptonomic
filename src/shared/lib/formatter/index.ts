@@ -17,7 +17,7 @@ const formatNumberWithCommas = (number: number | string | null) => {
 };
 
 const formatBalance = (rawBalance: string) =>
-  (parseInt(rawBalance) / 1000000000000000000).toFixed(2);
+  (parseInt(rawBalance) / 1e18).toFixed(2);
 
 const formatChainAsNum = (chainIdHex: string) => parseInt(chainIdHex);
 
