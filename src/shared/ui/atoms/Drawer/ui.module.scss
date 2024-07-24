@@ -1,0 +1,57 @@
+@import '@styles/custom';
+
+.drawer {
+  @include flex($alignItems: flex-end);
+
+  position: fixed;
+
+  z-index:  $z-index-modal;
+
+  top: 0;
+
+  bottom: 0;
+
+  left: 0;
+
+  right: 0;
+}
+
+.overlay {
+  opacity: 1;
+}
+
+.sheet {
+  position: fixed;
+
+  z-index: $z-index-modal;
+
+  transform: translateY(0%);
+
+  width: 100vw;
+
+  height: calc(100vh + 100px);
+
+  padding: 15px;
+
+  background: $background-paper;
+
+  border-radius: 12px 12px 0;
+
+  opacity: 1;
+
+  touch-action: none;
+}
+
+.line-block {
+  @include flex(center, center);
+
+  margin-bottom: 20px;
+}
+
+.line {
+  @include size(50px, 5px);
+
+  background-color: $border-main;
+
+  border-radius: 50px;
+}

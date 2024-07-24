@@ -31,6 +31,8 @@ export default function RootLayout({
         <Providers>{children}</Providers>
 
         <div id='modals'></div>
+
+        <div id='drawer'></div>
       </body>
     </html>
   );

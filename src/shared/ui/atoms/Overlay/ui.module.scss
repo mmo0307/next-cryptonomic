@@ -1,0 +1,23 @@
+@import '@styles/custom';
+
+.overlay {
+  @include flex(center, center, column);
+
+  @include size(100dvw, 100dvh);
+
+  position: fixed;
+
+  z-index: 2;
+
+  top: 0;
+
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+
+  transition: 0.5s;
+
+  pointer-events: none;
+}

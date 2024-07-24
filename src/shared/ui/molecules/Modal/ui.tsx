@@ -9,6 +9,7 @@ import React, {
 
 import { cn } from '@/shared/lib/classNames/classNames';
 
+import { Overlay as OverlayShadow } from '../../atoms/Overlay';
 import { Portal } from '../../atoms/Portal';
 
 import {
@@ -93,8 +94,8 @@ const Overlay: FC<OverlayModalProps> = ({
   return (
     <Portal element={element}>
       <ModalContext.Provider value={context}>
-        <div
-          className={cn(styles.overlay, className, {
+        <OverlayShadow
+          className={cn(className, {
             [styles.active]: visible
           })}
           onClick={onModalClose}
@@ -106,7 +107,7 @@ const Overlay: FC<OverlayModalProps> = ({
           >
             {children}
           </div>
-        </div>
+        </OverlayShadow>
       </ModalContext.Provider>
     </Portal>
   );
