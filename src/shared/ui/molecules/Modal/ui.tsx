@@ -3,6 +3,7 @@ import React, {
   FC,
   MouseEvent,
   useContext,
+  useEffect,
   useMemo
 } from 'react';
 
@@ -76,6 +77,18 @@ const Overlay: FC<OverlayModalProps> = ({
 
     onClose();
   };
+
+  useEffect(() => {
+    function onKeyPress(e: KeyboardEvent) {
+      if (e.key === 'Escape') onClose();
+    }
+
+    document.addEventListener('keydown', onKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', onKeyPress);
+    };
+  }, [onClose]);
 
   return (
     <Portal element={element}>
