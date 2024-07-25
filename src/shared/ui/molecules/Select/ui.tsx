@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 
 import { cn } from '@/shared/lib/classNames/classNames';
 import { useClickOutside } from '@/shared/lib/hooks/useClickOutside';
@@ -34,98 +34,100 @@ interface SelectProps {
   size?: SelectSize;
 }
 
-const Select: FC<SelectProps> = ({
-  className,
-  options,
-  label,
-  value,
-  size = 'lg',
-  pending,
-  onChange,
-  onOptionSelected,
-  onClick
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
+const Select = memo(
+  ({
+    className,
+    options,
+    label,
+    value,
+    size = 'lg',
+    pending,
+    onChange,
+    onOptionSelected,
+    onClick
+  }: SelectProps) => {
+    const ref = useRef<HTMLDivElement>(null);
 
-  const [isFocused, setIsFocused] = useState<boolean>(false);
+    const [isFocused, setIsFocused] = useState<boolean>(false);
 
-  const onInputClick = () => {
-    setIsFocused(true);
-  };
-
-  const onSelectClick = () => {
-    setIsFocused(true);
-
-    onClick?.();
-  };
-
-  const onOptionClick =
-    (option: string) => (event: React.MouseEvent<HTMLDivElement>) => {
-      event.stopPropagation();
-
-      onOptionSelected?.(option);
-
-      setIsFocused(false);
-
-      onChange(option);
+    const onInputClick = () => {
+      setIsFocused(true);
     };
 
-  useClickOutside(ref, () => {
-    setIsFocused(false);
-  });
+    const onSelectClick = () => {
+      setIsFocused(true);
 
-  return (
-    <div
-      ref={ref}
-      className={cn(styles.select, className)}
-      onClick={onSelectClick}
-    >
-      <Input
-        size={size}
-        label={label}
-        value={value}
-        focused={isFocused}
-        helperText='Helper text'
-        prepend={
-          <DropDown
-            className={cn(styles.icon, {
-              [styles.focusedIcon]: isFocused
-            })}
-          />
-        }
-        onClick={onInputClick}
-        // eslint-disable-next-line
-        // @ts-ignore
-        onChange={onChange}
-      />
+      onClick?.();
+    };
 
-      <View.Condition if={isFocused}>
-        <div
-          className={cn(styles.dropDown, styles[size], {
-            [styles.pending]: pending
-          })}
-        >
-          <View.Condition if={Boolean(pending)}>
-            <Loader.Circle className={cn(styles.loader)} />
-          </View.Condition>
+    const onOptionClick =
+      (option: string) => (event: React.MouseEvent<HTMLDivElement>) => {
+        event.stopPropagation();
 
-          <View.Condition if={!Boolean(pending)}>
-            <Each
-              data={options}
-              render={(option) => (
-                <div
-                  className={styles.dropDownItem}
-                  onClick={onOptionClick(option)}
-                >
-                  {option}
-                </div>
-              )}
+        onOptionSelected?.(option);
+
+        setIsFocused(false);
+
+        onChange(option);
+      };
+
+    useClickOutside(ref, () => {
+      setIsFocused(false);
+    });
+
+    return (
+      <div
+        ref={ref}
+        className={cn(styles.select, className)}
+        onClick={onSelectClick}
+      >
+        <Input
+          size={size}
+          label={label}
+          value={value}
+          focused={isFocused}
+          helperText='Helper text'
+          prepend={
+            <DropDown
+              className={cn(styles.icon, {
+                [styles.focusedIcon]: isFocused
+              })}
             />
-          </View.Condition>
-        </div>
-      </View.Condition>
-    </div>
-  );
-};
+          }
+          onClick={onInputClick}
+          // eslint-disable-next-line
+          // @ts-ignore
+          onChange={onChange}
+        />
+
+        <View.Condition if={isFocused}>
+          <div
+            className={cn(styles.dropDown, styles[size], {
+              [styles.pending]: pending
+            })}
+          >
+            <View.Condition if={Boolean(pending)}>
+              <Loader.Circle className={cn(styles.loader)} />
+            </View.Condition>
+
+            <View.Condition if={!Boolean(pending)}>
+              <Each
+                data={options}
+                render={(option) => (
+                  <div
+                    className={styles.dropDownItem}
+                    onClick={onOptionClick(option)}
+                  >
+                    {option}
+                  </div>
+                )}
+              />
+            </View.Condition>
+          </div>
+        </View.Condition>
+      </div>
+    );
+  }
+);
 
 export { Select };

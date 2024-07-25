@@ -1,4 +1,4 @@
-import { FC, useMemo, useRef } from 'react';
+import { memo, useMemo, useRef } from 'react';
 
 import { cn } from '@/shared/lib/classNames/classNames';
 import { useScroll } from '@/shared/lib/hooks/useScroll';
@@ -16,7 +16,7 @@ interface DataTableProps {
 }
 
 //TODO TABLE
-const DataTable: FC<DataTableProps> = ({ className }) => {
+const DataTable = memo(({ className }: DataTableProps) => {
   const scrollContainerRef = useRef(null!);
 
   const scrollY = useScroll();
@@ -87,6 +87,6 @@ const DataTable: FC<DataTableProps> = ({ className }) => {
       </div>
     </Card>
   );
-};
+});
 
 export { DataTable };

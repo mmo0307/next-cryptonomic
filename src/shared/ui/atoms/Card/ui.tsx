@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react';
+import { memo, PropsWithChildren } from 'react';
 
 import { styled } from '@/shared/utils/styled';
 
@@ -14,10 +14,10 @@ const Container = styled('div', styles.container);
 
 const Content = styled('div', styles.content);
 
-const Card: FC<CardProps> = ({ className, contentClassName, children }) => (
+const Card = memo(({ className, contentClassName, children }: CardProps) => (
   <Container className={className}>
     <Content className={contentClassName}>{children}</Content>
   </Container>
-);
+));
 
 export { Card };

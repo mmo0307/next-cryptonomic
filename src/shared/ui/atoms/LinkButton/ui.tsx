@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react';
+import { memo, PropsWithChildren } from 'react';
 import Link from 'next/link';
 
 import { cn } from '@/shared/lib/classNames/classNames';
@@ -15,20 +15,17 @@ interface LinkButtonProps extends PropsWithChildren {
   variant?: LinkVariant;
 }
 
-const LinkButton: FC<LinkButtonProps> = ({
-  to,
-  className,
-  variant = 'primary',
-  children
-}) => {
-  return (
-    <Link
-      href={to}
-      className={cn(styles.link, styles[variant], className)}
-    >
-      {children}
-    </Link>
-  );
-};
+const LinkButton = memo(
+  ({ to, className, variant = 'primary', children }: LinkButtonProps) => {
+    return (
+      <Link
+        href={to}
+        className={cn(styles.link, styles[variant], className)}
+      >
+        {children}
+      </Link>
+    );
+  }
+);
 
 export { LinkButton };

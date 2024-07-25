@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useRef, useState } from 'react';
+import { ChangeEvent, memo, useRef, useState } from 'react';
 
 import { cn } from '@/shared/lib/classNames/classNames';
 
@@ -14,7 +14,7 @@ interface CodeProps {
   error?: boolean;
 }
 
-const Code: FC<CodeProps> = ({ value, length = 4, error, onChange }) => {
+const Code = memo(({ value, length = 4, error, onChange }: CodeProps) => {
   const wrapperRef = useRef<HTMLInputElement>(null);
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -67,6 +67,6 @@ const Code: FC<CodeProps> = ({ value, length = 4, error, onChange }) => {
       </div>
     </>
   );
-};
+});
 
 export { Code };
