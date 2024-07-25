@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { NextPage } from 'next';
 
 import { LinkButton } from '@/shared/ui/atoms/LinkButton';
+import { DataTable } from '@/shared/ui/organisms/DataTable';
 import { Page } from '@/widgets/Page';
 
 const Home: NextPage = () => {
@@ -28,6 +29,10 @@ const Home: NextPage = () => {
       >
         {t('About Us')}
       </LinkButton>
+
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <DataTable />
+      </div>
     </Page>
   );
 };

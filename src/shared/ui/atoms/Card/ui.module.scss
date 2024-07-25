@@ -1,0 +1,19 @@
+@import '@styles/custom';
+
+.container {
+  width: fit-content;
+
+  padding: 20px;
+
+  background-color: $background-paper;
+
+  border: 1px solid $border-main;
+
+  border-radius: 6px;
+}
+
+.content {
+
+  min-width: 200px;
+  min-height: 200px;
+}
