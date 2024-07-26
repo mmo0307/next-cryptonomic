@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NextPage } from 'next';
+import { toast } from 'sonner';
 
 import { LinkButton } from '@/shared/ui/atoms/LinkButton';
 import { DataTable } from '@/shared/ui/organisms/DataTable';
@@ -29,6 +30,11 @@ const Home: NextPage = () => {
       >
         {t('About Us')}
       </LinkButton>
+
+      <button onClick={() => toast('My first toast')}>
+        {' '}
+        {t('Give me a toast')}
+      </button>
 
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <DataTable />

@@ -3,6 +3,7 @@ import '@styles/globals';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Pixelify_Sans, Rubik } from 'next/font/google';
+import { Toaster } from 'sonner';
 
 import { cn } from '@/shared/lib/classNames/classNames';
 
@@ -29,6 +30,8 @@ export default function RootLayout({
     <html lang='en'>
       <body className={cn(rubik.variable, pixelifySans.variable)}>
         <Providers>{children}</Providers>
+
+        <Toaster />
 
         <div id='modals'></div>
 

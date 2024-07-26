@@ -1,20 +1,20 @@
 .counter {
-  margin: 32px auto;
   display: flex;
   width: 100%;
   max-width: 190px;
+  margin: 32px auto;
 }
 
 .btn {
   width: 42px;
   font-size: 32px;
   font-weight: bold;
-  background-color: #1c6bd1;
+  line-height: 1.4;
   color: white;
+  background-color: #1c6bd1;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  line-height: 1.4;
 }
 
 .btn:hover {
