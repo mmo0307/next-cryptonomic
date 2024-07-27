@@ -2,6 +2,7 @@ import React, { memo, ReactNode } from 'react';
 
 import { cn } from '@/shared/lib/classNames/classNames';
 import { generateRandomColorAvatar } from '@/shared/lib/getRandomColor/getRandomColor';
+import { Each } from '@/shared/utils/each/each';
 
 import { View } from '../View';
 
@@ -15,7 +16,11 @@ interface AvatarProps {
 
 const Avatar = memo(({ className, icon }: AvatarProps) => {
   return (
-    <div className={cn(styles.avatar, className)}>
+    <div
+      className={cn(styles.avatar, className, {
+        [styles.withIcon]: Boolean(icon)
+      })}
+    >
       <View.Condition if={Boolean(icon)}>{icon}</View.Condition>
 
       <View.Condition if={!Boolean(icon)}>
@@ -25,12 +30,11 @@ const Avatar = memo(({ className, icon }: AvatarProps) => {
   );
 });
 
-const RandomAvatar = memo(() => {
-  const avatarColors = generateRandomColorAvatar(90);
-
-  return (
-    <div className={styles.randomAvatar}>
-      {avatarColors.map((colors) =>
+const RandomAvatar = memo(() => (
+  <div className={styles.randomAvatar}>
+    <Each
+      data={generateRandomColorAvatar(90)}
+      render={(colors) =>
         colors.map((color, index) => (
           <span
             className={styles.colorItem}
@@ -38,9 +42,9 @@ const RandomAvatar = memo(() => {
             style={{ backgroundColor: color }}
           />
         ))
-      )}
-    </div>
-  );
-});
+      }
+    />
+  </div>
+));
 
 export { Avatar };

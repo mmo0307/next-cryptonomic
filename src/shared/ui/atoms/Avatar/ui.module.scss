@@ -23,3 +23,7 @@
 
   display: block;
 }
+
+.with-icon {
+  @include flex(center, center);
+}
