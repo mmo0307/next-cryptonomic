@@ -7,22 +7,17 @@ import { Button } from '../../atoms/Button';
 import { Card } from '../../atoms/Card';
 import { Table } from '../../molecules/Table';
 
+import { DataTableProps } from './model/types';
+
 import Arrow from '@/shared/assets/icons/arrow-left.svg';
 
 import styles from './ui.module.scss';
 
-interface DataTableProps {
-  className?: string;
-}
-
 //TODO TABLE
-const DataTable = memo(({ className }: DataTableProps) => {
+const DataTable = memo(({ className, data, headline }: DataTableProps) => {
   const scrollContainerRef = useRef(null!);
 
   const scrollY = useScroll();
-
-  const dataHeader = Array(4).fill(1);
-  const data = Array(10).fill(1);
 
   const scrollButtonTopOffset = useMemo(() => {
     switch (data.length || 10) {
@@ -58,17 +53,33 @@ const DataTable = memo(({ className }: DataTableProps) => {
           <Table.Container>
             <Table.Header className={styles.tableHead}>
               <Table.Row>
-                {dataHeader.map((item) => (
-                  <Table.Headline key={item}>{'Person'}</Table.Headline>
+                {headline.map((item) => (
+                  <Table.Headline
+                    key={item.id}
+                    style={{
+                      width: item.width ?? 'auto',
+                      minWidth: item.width ?? 'auto'
+                    }}
+                  >
+                    {item.title}
+                  </Table.Headline>
                 ))}
               </Table.Row>
             </Table.Header>
 
             <Table.Body>
-              {data.map(() => (
-                <Table.Row>
-                  {dataHeader.map((item) => (
-                    <Table.Cell key={item}>{'Person'}</Table.Cell>
+              {data.map((info) => (
+                <Table.Row key={info.id}>
+                  {headline.map((item) => (
+                    <Table.Cell
+                      key={item.id}
+                      style={{
+                        width: item.width ?? 'auto',
+                        minWidth: item.width ?? 'auto'
+                      }}
+                    >
+                      {info[item.id] ?? ''}
+                    </Table.Cell>
                   ))}
                 </Table.Row>
               ))}
