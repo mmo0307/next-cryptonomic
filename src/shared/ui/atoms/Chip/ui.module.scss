@@ -1,0 +1,11 @@
+@import '@styles/custom';
+
+.chip {
+  width: fit-content;
+
+  padding: 5px;
+
+  background-color: $green-50;
+
+  border-radius: 7px;
+}
