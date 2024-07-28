@@ -1,6 +1,9 @@
 import type { Preview } from '@storybook/react';
-import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
-import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+import {
+  FontDamilyDecorator,
+  StyleDecorator,
+  TranslationDecorator
+} from '../../src/shared/config/storybook';
 
 const preview: Preview = {
   parameters: {
@@ -11,7 +14,7 @@ const preview: Preview = {
       }
     }
   },
-  decorators: [TranslationDecorator, StyleDecorator]
+  decorators: [FontDamilyDecorator, TranslationDecorator, StyleDecorator]
 };
 
 export default preview;

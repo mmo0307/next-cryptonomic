@@ -7,9 +7,9 @@
 }
 
 .code {
-  @include size(48px);
+  @include flex(center, center);
 
-  display: block;
+  @include size(48px);
 
   border: 1px solid $gray-25;
 

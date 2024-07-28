@@ -26,8 +26,8 @@ export const Icon = memo(
   ({
     className,
     Svg,
-    width = 32,
-    height = 32,
+    width = 24,
+    height = 24,
     clickable,
     onClick,
     ...otherProps

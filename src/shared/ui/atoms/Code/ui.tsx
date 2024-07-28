@@ -2,17 +2,9 @@ import { ChangeEvent, memo, useRef, useState } from 'react';
 
 import { cn } from '@/shared/lib/classNames/classNames';
 
+import { CodeProps } from './model/types';
+
 import styles from './ui.module.scss';
-
-interface CodeProps {
-  value: string;
-
-  onChange: (value: string) => void;
-
-  length?: number;
-
-  error?: boolean;
-}
 
 const Code = memo(({ value, length = 4, error, onChange }: CodeProps) => {
   const wrapperRef = useRef<HTMLInputElement>(null);
@@ -22,7 +14,7 @@ const Code = memo(({ value, length = 4, error, onChange }: CodeProps) => {
   const onClick = (index: number): void => {
     wrapperRef.current?.focus();
 
-    if (value.length) {
+    if (value?.length) {
       setActiveIndex(index);
 
       return;
@@ -61,7 +53,7 @@ const Code = memo(({ value, length = 4, error, onChange }: CodeProps) => {
               })}
               onClick={() => onClick(index)}
             >
-              <span>{value[index] || ''}</span>
+              <span>{value?.[index] || ''}</span>
             </div>
           ))}
       </div>
