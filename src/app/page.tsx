@@ -7,6 +7,7 @@ import { toast } from 'sonner';
 
 import { Chip } from '@/shared/ui/atoms/Chip';
 import { LinkButton } from '@/shared/ui/atoms/LinkButton';
+import { Marque } from '@/shared/ui/atoms/Marque';
 import { Page } from '@/widgets/Page';
 
 const Home: NextPage = () => {
@@ -32,9 +33,16 @@ const Home: NextPage = () => {
       </LinkButton>
 
       <button onClick={() => toast('My first toast')}>
-        {' '}
         {t('Give me a toast')}
       </button>
+
+      <Marque>
+        {Array(100)
+          .fill(1)
+          .map(() => (
+            <p>TEXT</p>
+          ))}
+      </Marque>
 
       <Chip>{'Create your NFT avatar'}</Chip>
     </Page>

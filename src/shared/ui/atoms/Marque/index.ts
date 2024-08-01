@@ -1,0 +1,1 @@
+export { Marque } from './ui';
