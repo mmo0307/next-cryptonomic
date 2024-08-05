@@ -6,6 +6,7 @@ import { NextPage } from 'next';
 import { toast } from 'sonner';
 
 import { Chip } from '@/shared/ui/atoms/Chip';
+import { Kbd } from '@/shared/ui/atoms/Kbd/ui';
 import { LinkButton } from '@/shared/ui/atoms/LinkButton';
 import { Marque } from '@/shared/ui/atoms/Marque';
 import { Page } from '@/widgets/Page';
@@ -45,6 +46,8 @@ const Home: NextPage = () => {
       </Marque>
 
       <Chip>{'Create your NFT avatar'}</Chip>
+
+      <Kbd keysToRender={['command', 'space', 'up', 'right', 'ctrl']}>K</Kbd>
     </Page>
   );
 };
